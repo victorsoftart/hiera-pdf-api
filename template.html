@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <mate charest="utf-8" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="readerview">
+        <h1>{{title}}</h1>
+        <p>
+          {{issuedDate}}{{author}}{{minutes}} mins
+        </p>
+      </div>
+    </div>
+  </body>
+  <style>
+    html {
+      -webkit-print-color-adjust: exact;
+    }
+
+    body {
+      overflow: auto;
+      margin: 0;
+      background-color: #f5f8fa;
+
+      font-family: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+        'Open Sans', 'Helvetica Neue', 'Icons16', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #ffffff;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #182026;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #182026;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      overflow-y: auto;
+    }
+
+    .readerview {
+      width: 600px;
+      height: fit-content;
+      text-align: center;
+    }
+
+    .readerview h1 {
+      line-height: 1.5;
+      font-size: 36px;
+      color: #182026;
+      font-weight: 600;
+      margin: 0 0 10px;
+      padding: 0;
+    }
+
+    .readerview p {
+      color: rgb(145, 143, 143);
+    }
+
+    .readerview article h3 {
+      line-height: 1.5;
+      font-size: 22px;
+      color: #182026;
+      font-weight: normal;
+      margin: 0 0 10px;
+      padding: 0;
+    }
+
+    .readerview article h3 strong {
+      font-weight: 500;
+    }
+
+    .tags {
+      margin-top: 5px;
+    }
+
+    .tags .tag {
+      background-color: rgba(138, 155, 168, 0.2);
+      padding: 2px 6px;
+      font-size: 12px;
+      border-radius: 3px;
+      color: #182026;
+      cursor: pointer;
+      margin-top: 5px;
+      margin-right: 5px;
+    }
+  </style>
+</html>
