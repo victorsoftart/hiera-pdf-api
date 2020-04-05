@@ -6,25 +6,21 @@
   "author": "beyond7 <52490076+beyond7@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon --exec babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  },
+  "devDependencies": {},
   "dependencies": {
     "@babel/core": "^7.8.7",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
-    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "easy-pdf-merge": "^0.2.2",
     "express": "^4.17.1",
     "handlebars": "^4.7.3",
-    "md-to-pdf": "^3.0.0",
     "moment": "^2.24.0",
-    "morgan": "^1.10.0",
-    "prettify-markdown": "^0.1.1",
+    "nodemon": "^2.0.2",
     "puppeteer": "^2.1.1"
   }
 }

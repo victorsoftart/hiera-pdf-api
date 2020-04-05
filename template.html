@@ -1,103 +1,137 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <mate charest="utf-8" />
+    <meta charest="utf-8" />
+    <meta http-equiv="Content-Security-Policy" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hiera PDF</title>
   </head>
   <body>
+    <!-- Page styles(It should be outside head) -->
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Roboto&display=swap');
+
+      body {
+        overflow: auto;
+        margin: 0;
+        font-family: Lato, Roboto, sans-serif;
+      }
+      *, *::before, *::after {
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .container {
+        width: 8.5in;
+        margin: 10px auto;
+        border: 1px dotted darkgrey;
+        overflow-y: scroll;
+      }
+      .readerview {
+        width: 100%;
+      }
+      .cover {
+        position: relative;
+        padding: 50px;
+        height: calc(100vh - 120px);
+        border: 1px dotted grey;
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+      .cover .title {
+        margin-top: 1.5cm;
+        margin-bottom: .5cm;
+        font-size: 60px;
+        font-weight: 300;
+      }
+      .cover .person {
+        margin-bottom: 1em;
+        font-size: 12px;
+        font-weight: 300;
+      }
+      .cover .completed {
+        font-size: 18px;
+        font-weight: 100;
+        color: #a0a0a0;
+      }
+      .cover .bottom-logo {
+        position: absolute;
+        width: 150px;
+        height: auto;
+        border: 0px solid red;
+        bottom: 50px;
+      }
+      article {
+        padding: 50px;
+        line-height: 1.5em;
+      }
+      article h3 {
+        margin-top: .7cm;
+        margin-bottom: .3cm;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      article p {
+        font-size: 16px;
+        font-weight: 300;
+      }
+      @media print {
+        .container {
+          width: 100%;
+          margin: 0;
+          border: 0px;
+        }
+        .cover {
+          padding: 0;
+          border: 0px;
+        }
+        .cover .bottom-logo {
+          bottom: -15mm;
+        }
+        article {
+          padding: 0;
+        }
+      }
+    </style>
     <div class="container">
       <div class="readerview">
-        <h1>{{title}}</h1>
-        <p>
-          {{issuedDate}}{{author}}{{minutes}} mins
-        </p>
+        <section class="cover">
+          <div class="title">$13B in gains and $11B in losses for January.</div>
+          <div class="person">Prepared for Patrick B. at HolonIQ</div>
+          <div class="completed">Completed {{issuedDate}}</div>
+          <img class="bottom-logo" src="http://localhost:5101/img/mark.png">
+        </section>
+        <article>
+          <h3>Capital Markets - February 2020.</h3>
+          
+          <h3>Chinese education stocks, powered for the most part by digital solutions, are the strong performers amidst COVID-19 concerns. Publishers & student accommodation providers are taking hits.</h3>
+          
+          <h3>Chinese stocks dominating the top performers.</h3>
+          <p>Chinese education stocks are, for the most part focused on technology enhanced delivery, so it's perhaps not surprising that amid the COVID-19 outbreak in China as schools and universities are being closed, that stocks are fairing well. Outside China, IDP (Australia) and 2U (USA), were also among the top performing education stocks this month.</p>
+          
+          <h3>Publishing companies continue a horror run</h3>
+          <p>Publishing stocks continue see declining market caps with Informa, Wiley and Pearson again in the bottom performers for the month. In the UK, Informa closed 15% down (10% down last month) & Pearson 6% down (12% down last month) while US publisher, Wiley, closed 15% down (10% down last month).</p>
+          <p>UK-based student accommodation provider Unite posted a 14% decline in market cap for the month, likely to be a result of restricted travel for international students and university closures resulting from COVID-19.</p>
+          
+          <h3>Cornerstone on Demand to acquire Saba</h3>
+          <p>The enterprise LMS giant, Cornerstone on Demand announced the acquisition of competitor, Saba, this month in a transaction worth $1.4 billion bringing Cornerstone an additional 1,000+ enterprise-class customers.</p>
+          
+          <h3>Digital credentialing acquisitions</h3>
+          <p>This month saw two acquisitions in the digital credentialing space with Parchment, a digital credential service acquired by PE firm Brentwood Associates and Learning Machine, which issues digital credentials based on blockchain technology was acquired by general technology services company Hyland.</p>
+          
+          
+          
+          
+          <h3>Additional Note!</h3>
+          <p>This month saw two acquisitions in the digital credentialing space with Parchment, a digital credential service acquired by PE firm Brentwood Associates and Learning Machine, which issues digital credentials based on blockchain technology was acquired by general technology services company Hyland.</p>
+          <p>This month saw two acquisitions in the digital credentialing space with Parchment, a digital credential service acquired by PE firm Brentwood Associates and Learning Machine, which issues digital credentials based on blockchain technology was acquired by general technology services company Hyland.</p>
+          <p>This month saw two acquisitions in the digital credentialing space with Parchment, a digital credential service acquired by PE firm Brentwood Associates and Learning Machine, which issues digital credentials based on blockchain technology was acquired by general technology services company Hyland.</p>
+          
+        </article>
       </div>
     </div>
   </body>
-  <style>
-    html {
-      -webkit-print-color-adjust: exact;
-    }
-
-    body {
-      overflow: auto;
-      margin: 0;
-      background-color: #f5f8fa;
-
-      font-family: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-        'Open Sans', 'Helvetica Neue', 'Icons16', sans-serif;
-    }
-
-    ::-webkit-scrollbar {
-      width: 5px;
-      height: 5px;
-    }
-
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background: #ffffff;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: #182026;
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background: #182026;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      overflow-y: auto;
-    }
-
-    .readerview {
-      width: 600px;
-      height: fit-content;
-      text-align: center;
-    }
-
-    .readerview h1 {
-      line-height: 1.5;
-      font-size: 36px;
-      color: #182026;
-      font-weight: 600;
-      margin: 0 0 10px;
-      padding: 0;
-    }
-
-    .readerview p {
-      color: rgb(145, 143, 143);
-    }
-
-    .readerview article h3 {
-      line-height: 1.5;
-      font-size: 22px;
-      color: #182026;
-      font-weight: normal;
-      margin: 0 0 10px;
-      padding: 0;
-    }
-
-    .readerview article h3 strong {
-      font-weight: 500;
-    }
-
-    .tags {
-      margin-top: 5px;
-    }
-
-    .tags .tag {
-      background-color: rgba(138, 155, 168, 0.2);
-      padding: 2px 6px;
-      font-size: 12px;
-      border-radius: 3px;
-      color: #182026;
-      cursor: pointer;
-      margin-top: 5px;
-      margin-right: 5px;
-    }
-  </style>
 </html>
